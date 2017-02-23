@@ -25,7 +25,7 @@ SECRET_KEY = 'xox217jfo&5m6i=(_$p#20skgstbf1*h%2j=ld*4*cvg(%2(8_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'startupevents.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'startupevents',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
+
 
 
 # Password validation
