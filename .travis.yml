@@ -1,0 +1,31 @@
+language: python
+sudo: false
+python:
+- '3.5'
+
+addons:
+  postgresql: "9.4"
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/.pip-accel
+
+before_cache:
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+before_script:
+- psql -c "CREATE DATABASE startupevents" -U postgres
+
+install:
+- pip install pip-accel
+- pip install flake8
+- pip-accel install -r requirements.txt
+
+script:
+- flake8
+
+notifications:
+  email:
+    on_success: change  # [always|never|change]
+    on_failure: always  # [always|never|change]
