@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+APP_DIR = os.path.join(BASE_DIR, 'startupevents')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'startupevents.customuser',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -149,3 +150,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+
+# AUTH USER MODEL
+AUTH_USER_MODEL = 'customuser.User'
+AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
