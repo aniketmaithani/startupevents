@@ -4,6 +4,7 @@
 from django.test import TestCase
 
 from startupevents.customuser.models import User
+import pytest
 
 
 class UserModelTestCase(TestCase):
@@ -18,6 +19,11 @@ class UserModelTestCase(TestCase):
         assert u.get_full_name() == 'F B'
         assert u.get_short_name() == 'F'
         assert str(u) == "{} {}".format(u.id, u.email)
+
+    def test_raise_email_error(self):
+        with pytest.raises(ValueError, message="ValueError: The given email must be set"):
+            User.objects.create_user(
+                email='', password='abc', first_name="F", last_name='B')
 
     def test_create_super_user(self):
         u = User.objects.create_superuser(email='f@f.com', password='abc')
