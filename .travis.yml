@@ -25,6 +25,10 @@ script:
 - flake8
 - py.test --cov -v --tb=native
 
+after_script:
+- coveralls
+- bash <(curl -s https://codecov.io/bash)
+
 notifications:
   email:
     on_success: change  # [always|never|change]
