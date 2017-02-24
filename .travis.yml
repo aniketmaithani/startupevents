@@ -20,7 +20,7 @@ before_script:
 install:
 - pip install pip-accel
 - pip install flake8
-- pip-accel install -r requirements.txt
+- pip-accel install -r requirements/common.txt
 
 script:
 - flake8
