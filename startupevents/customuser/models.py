@@ -54,7 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         ordering = ('-date_joined', )
 
     def __str__(self):
-        return str(self.id)
+        return '{} {}'.format(self.id, self.email)
 
     def get_full_name(self):
         """

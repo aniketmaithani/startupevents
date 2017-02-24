@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'startupevents.customuser',
+    'startupevents.profiles',
 ]
 
 MIDDLEWARE_CLASSES = [
