@@ -19,11 +19,11 @@ before_script:
 
 install:
 - pip install pip-accel
-- pip install flake8
-- pip-accel install -r requirements/common.txt
+- pip-accel install -r requirements/development.txt
 
 script:
 - flake8
+- py.test --cov -v --tb=native
 
 notifications:
   email:

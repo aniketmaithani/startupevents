@@ -1,0 +1,3 @@
+[run]
+source = startupevents/
+omit = '*tests*,*commands*,*migrations*,*admin*,*wsgi*'
