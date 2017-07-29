@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from .profiles.views import Registration
 
-Sourabh is here
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
